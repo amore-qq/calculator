@@ -34,4 +34,9 @@ class CalculatorTest {
         double result = Calculator.calculate(2, 3, Operation.POW);
         Assertions.assertEquals(8, result);
     }
+
+    @Test
+    void divisionByZeroTest() {
+        Assertions.assertThrows(ArithmeticException.class, () -> Calculator.calculate(9123, 0, Operation.DIVIDE));
+    }
 }
